@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --white-100: #f4f9f7;
+    --black-100: #232223;
+    --green-100: #335449;
+}
+
+.accordion__item {
+    background-color: var(--white-100);
+    color: var(--black-100);
+
+    &.active {
+        background-color: var(--green-100);
+        color: var(--white-100);
+    }
+}
+
+.accordion__plus {
+    &.active {
+        transform: rotate(45deg);
+    }
+
+}
+
+.accordion__text {
+    width: calc(100% - (1.25rem + .75rem));
+    margin-left: auto;
+}
+
+.accordion__body,
+.accordion__item,
+.accordion__plus {
+    transition: all 0.4s linear;
+
+}
+
+.header__title{
+    animation: title 0.7s ease-in-out;
+    
+}
+
+.accordion{
+    animation: accordion 0.7s ease-in-out;
+
+}
+
+@keyframes title {
+    from{
+        transform: translateX(-80px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
+}
+
+@keyframes accordion {
+    from{
+        transform: translateX(80px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
+}
